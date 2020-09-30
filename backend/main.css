@@ -1,0 +1,61 @@
+.login .container-fluid {
+  height: 100vh;
+  display: flex;
+  background-color: #757575;
+  align-items: center;
+  background-image: url(assets/leftbg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.login .container-fluid .container {
+  max-width: 1300px;
+}
+.login .container-fluid .container .left img {
+  max-width: 350px;
+}
+.login .container-fluid .container .left .heading {
+  font-size: 49px;
+  font-weight: 700;
+  padding-top: 50px;
+  color: white;
+}
+.login .container-fluid .container .left .sub-heading {
+  font-size: 23px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+.login .container-fluid .container .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+.login .container-fluid .container .right .login_card {
+  max-width: 330px;
+  background-color: #000;
+  padding: 2.2rem 3rem;
+  color: white;
+  border-radius: 7px;
+}
+.login .container-fluid .container .right .login_card .form-row {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.login .container-fluid .container .right .login_card button {
+  background-color: transparent;
+  padding: 0.4rem 1.3rem;
+  outline: none;
+  border: 2px solid #8762a3;
+  color: #8762a3;
+  font-weight: 600;
+}
+.login .container-fluid .container .right .login_card button:hover {
+  border: 2px solid white;
+  color: white;
+  background-color: #8762a3;
+}
+.login .container-fluid .container .right .login_card button:active {
+  border: 2px solid white;
+  color: white;
+  background-color: #3c244e;
+}
