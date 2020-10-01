@@ -21,6 +21,7 @@
             $sql = "SELECT * FROM subjects WHERE dept_id='$dept' AND sem_id='$sem'";
             $result = $conn->query($sql);
             $subjects = $result->fetch_assoc();
+            $str="";
             
             $str = <<<EOT
                 <div class="col-md-6">
