@@ -135,7 +135,7 @@
                             }
                             else if($search_for==3)
                             {
-                                $sql = "SELECT * FROM students WHERE (`sem` LIKE '%".$search."%')";
+                                $sql = "SELECT * FROM students WHERE (`sem_id` LIKE '%".$search."%')";
                             }
                             
                         }
