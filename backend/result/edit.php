@@ -1,7 +1,20 @@
 <?php
     require '../session.php';
-?>
-<?php
+    require '../connect.php';
+
+    $usn = "";
+    $name = "";
+    $dept_id = "";
+    $sem_id = "";
+    $sub1 = "";
+    $sub2 = "";
+    $sub3 = "";
+    $sub4 = "";
+    $sub5 = "";
+    $sub6 = "";
+    $lab1 = "";
+    $lab2 = "";
+
     if( isset($_POST['edit_id']) ){        
         $sql = "SELECT * FROM students WHERE id = '$_POST[edit_id]'";
         $result = $conn->query($sql);
@@ -14,10 +27,33 @@
                 $name = $row['name'];
                 $dept_id = $row['dept_id'];
                 $sem_id = $row['sem_id'];
-
             }
         }
-    }    
+    } 
+?>
+
+<!-- updating table -->
+<?php 
+$message =" ";
+    
+    if(isset($_POST['usn'])) { 
+        // $sql = "UPDATE students SET usn = '$_POST[usn]',name= '$_POST[name]',dept_id= '$_POST[dept_id]',sem_id= '$_POST[sem_id]',sub1= '$_POST[sub1]',sub2= '$_POST[sub2]',sub3= '$_POST[sub3]',sub4= '$_POST[sub4]',sub5= '$_POST[sub5]',sub6= '$_POST[sub6]',lab1= '$_POST[lab1]',lab2= '$_POST[lab2]' WHERE id='$id";
+        $sql = "UPDATE students SET usn = '$_POST[usn]', name= '$_POST[name]',dept_id= '$_POST[dept]',sem_id= '$_POST[sem]',sub1= '$_POST[sub1]',sub2= '$_POST[sub2]',sub3= '$_POST[sub3]',sub4= '$_POST[sub4]',sub5= '$_POST[sub5]',sub6= '$_POST[sub6]',lab1= '$_POST[lab1]',lab2= '$_POST[lab2]' WHERE id='$_POST[id]'";
+        if ($conn->query($sql) === TRUE) 
+        {
+            $message= <<<EOT
+            <div class="alert alert-success" role="alert">Record updated successfully!!!</div>
+            EOT;
+            
+            header("location:http://localhost/resultify/backend/result/manage.php ");
+        }
+        else
+        {
+            $message= <<<EOT
+            <div class="alert alert-danger" role="alert">Error!!! Couldn't create record</div>
+            EOT;
+        }
+    }
 ?>
 
 <style>
@@ -61,9 +97,16 @@
     <?php include '../header.php' ?>
 
     <div class="container" style="margin-top:50px;">
-        <p class="heading" style="margin:0 auto;"> Something</p>
-        <p class="heading">Edit Result</p>
+        <p class="heading" style="margin:0 auto;"> Edit Result</p>
+        <div class="col-md-4"><?php echo $message; ?></div>
         <form action="" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>ID</label>
+                    <input type="text" class="form-control" name="id" value = "<?php echo $id; ?>" readonly="readonly"  />
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <label for="usn">USN</label>
