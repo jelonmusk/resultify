@@ -41,6 +41,34 @@ if(isset($_GET['usn']))
         font-size: 22px;
         font-weight: 600;
     }
+
+    nav button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    @media print {
+        nav {
+            display: none;
+        }
+
+        .res_top .row {
+            background-color: transparent !important;
+        }
+
+        .student_name {
+            background-color: transparent !important;
+        }
+
+        .student_details h4 {
+            color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        tr {
+            color: black !important;
+        }
+    }
 </style>
 
 
@@ -78,16 +106,16 @@ if(isset($_GET['usn']))
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-        <?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <!---result table-->
-    <section class="index">
+    <section class="index" id="index">
         <div class="container" style="padding-bottom:45px;">
             <div class="row" style="padding-top:25px"></div>
             <div class="row" style="padding-top:25px">
                 <div class="col-md-12 res_top" style="padding:20px; border:1px solid #8762a3">
                     <div class="row" style="background-color:#000000 ;">
                         <div class="col-md-6 student_name"
-                            style=" background-color:#8762a3;  border-right:0.5px solid #8762a3; color: white; display:flex; align-items:center;">
+                            style="background-color:#8762a3;  border-right:0.5px solid #8762a3; color: white; display:flex; align-items:center;">
                             <h3 style="color:black; font-weight:600">Student's Name: <?php echo $name; ?></h3>
                         </div>
                         <div class="col-md-6 student_details">
@@ -324,8 +352,8 @@ if(isset($_GET['usn']))
                                     <?php echo $lab2;?>
                                 </td>
                             </tr>
-                            <tr class="table-success" >
-                                <th scope="row" >Total</th>
+                            <tr class="table-success">
+                                <th scope="row">Total</th>
                                 <td><?php echo $total; ?></td>
                             </tr>
 
@@ -334,11 +362,13 @@ if(isset($_GET['usn']))
                 </div>
             </div>
             <div class="row" style="padding-top:20px;">
-                <div class="col-md-12" >
+                <div class="col-md-12">
                     <h3 style="font-weight:600; text-align:right">RESULT : <?php echo $status; ?></h3>
                 </div>
             </div>
             <div class="row" style="padding-top:25px"></div>
+
+            
     </section>
 </body>
 
