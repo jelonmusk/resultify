@@ -1,7 +1,7 @@
 # Resultify
 ## Student Result Management System
 
-
+![](https://github.com/jelonmusk/resultify/blob/master/screenshots/demo.gif)
 
 Checkout the complete demonstration of the app [here](https://youtu.be/ePkL9_u88Vo)
 
