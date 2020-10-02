@@ -11,3 +11,7 @@ Checkout the complete demonstration of the app [here](https://youtu.be/ePkL9_u88
 * Result Maintainers / Staff / Faculty can manage and maintain student's result by loggin in with an authorised username and password.
 * Results can be added , edited and deleted as per user's requirement.
 * A search box to implement faster access to a specific record  which could be usn-wise, department-wise or semester wise.
+   
+ |--------------------------------------------------------------------------------------------|
+ 
+ ![](https://github.com/jelonmusk/resultify/blob/master/screenshots/Screenshot-backend2.png)
